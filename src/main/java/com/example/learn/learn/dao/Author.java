@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +33,7 @@ public class Author {
     @Column
     private String name;
 
-
+    // for default FetchType is lazy it means this when you select it other part dosn't come 
     @OneToMany(cascade = CascadeType.ALL,
         mappedBy = "author"
     )
